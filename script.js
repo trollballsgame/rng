@@ -1,3 +1,5 @@
+let iscutscene = false
+
 const rarities = [
   { name: "[redacted]",      chance: 1 / 1500000, color: "#00ff00" },  
   { name: "KHDGWBNVIK====",  chance: 1 / 1450000, color: "#ffffff" },
@@ -19,6 +21,7 @@ const rarities = [
 ];
 
 function startCutscene(text) {
+  iscutscene = true
   const cutscene = document.getElementById("cutscene");
   const cutsceneText = document.getElementById("cutscene-text");
   cutsceneText.textContent = text;
@@ -26,10 +29,12 @@ function startCutscene(text) {
 
   setTimeout(() => {
     cutscene.classList.add("hidden");
+    iscutscene = false
   }, 3000);
 }
 
 function roll() {
+  if (iscutscene) return;
   const resultEl = document.getElementById("result");
   resultEl.className = ""
 
