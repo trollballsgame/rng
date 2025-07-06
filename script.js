@@ -1,4 +1,5 @@
 const rarities = [
+    { name: "███████",      chance: 1 / 1500000 color: "#00ff00 },  
     { name: "KHDGWBNVIK====",   chance: 1 / 1450000, color: "#ffffff" },
     { name: "transcendant", chance: 1 / 1000000, color: "#0ff0ff" },
     { name: "classical",    chance: 1 / 499999, color: "#ffffff" },
