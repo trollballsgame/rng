@@ -1,5 +1,5 @@
 const rarities = [
-    { name: "[redacted]",      chance: 1 / 1500000, color: "#00ff00 },  
+    { name: "[redacted]",      chance: 1 / 1500000, color: "#00ff00" },  
     { name: "KHDGWBNVIK====",   chance: 1 / 1450000, color: "#ffffff" },
     { name: "transcendant", chance: 1 / 1000000, color: "#0ff0ff" },
     { name: "classical",    chance: 1 / 499999, color: "#ffffff" },
@@ -10,7 +10,7 @@ const rarities = [
     { name: "Legendary",    chance: 1 / 5000,   color: "#ff9900" },
     { name: "lucky",        chance: 1 / 777,    color: "#00ffff" },
     { name: "Rare",         chance: 1 / 100,    color: "#007bff" },
-    { name: "fake",         chance: 1 / 50,     color: "#007n7cf" },
+    { name: "fake",         chance: 1 / 50,     color: "#007acf" },
     { name: "glow",     chance: 1 / 15,     color: "#ffeeaa" },
     { name: "Uncommon",     chance: 1 / 10,     color: "#22aa22" },
     { name: "morning",      chance: 1 / 7,      color: "#ffd75e" },
