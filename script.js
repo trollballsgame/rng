@@ -1,15 +1,18 @@
 const rarities = [
-    { name: "classical", chance: 1 / 499999, color: "#ffffff" },
-    { name: "error",     chance: 1 / 404201, color: "#ff0033" },
-    { name: "mythic",    chance: 1 / 75000,  color: "#ff00cc" },
-    { name: "Ethereal",  chance: 1 / 60300,  color: "#a100ff" },
-    { name: "Legendary", chance: 1 / 5000,   color: "#ff9900" },
-    { name: "lucky",     chance: 1 / 777,    color: "#00ffff" },
-    { name: "Rare",      chance: 1 / 100,    color: "#007bff" },
-    { name: "fake",      chance: 1 / 50,    color: "#007n7cf" },
-    { name: "Uncommon",  chance: 1 / 10,     color: "#22aa22" },
-    { name: "electric",  chance: 1 / 5,      color: "#ffff00" },
-    { name: "Common",    chance: 1 / 2,      color: "#888888" }
+    { name: "KHDGWBNVIK====",   chance: 1 / 499999, color: "#ffffff" },
+    { name: "transcendant", chance: 1 / 1000000, color: "#0ff0ff" },
+    { name: "classical",    chance: 1 / 499999, color: "#ffffff" },
+    { name: "error",        chance: 1 / 404201, color: "#ff0033" },
+    { name: "mythic",       chance: 1 / 75000,  color: "#ff00cc" },
+    { name: "Ethereal",     chance: 1 / 60300,  color: "#a100ff" },
+    { name: "Legendary",    chance: 1 / 5000,   color: "#ff9900" },
+    { name: "lucky",        chance: 1 / 777,    color: "#00ffff" },
+    { name: "Rare",         chance: 1 / 100,    color: "#007bff" },
+    { name: "fake",         chance: 1 / 50,    color: "#007n7cf" },
+    { name: "Uncommon",     chance: 1 / 10,     color: "#22aa22" },
+    { name: "morning",      chance: 1 / 7,      color: "#ffd75e" },
+    { name: "electric",     chance: 1 / 5,      color: "#ffff00" },
+    { name: "Common",       chance: 1 / 2,      color: "#888888" }
 ]
   
 function roll() {
