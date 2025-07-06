@@ -44,7 +44,6 @@ function roll() {
       let spanClass = "";
       if (r.name === "glow") spanClass = "glow";
       else if (r.name === "glow - extreme") spanClass = "glowX";
-      else if (r.name === "electric") spanClass = "electric";
 
       if (r.name === "classical") {
         startCutscene("ok now this is rare");
