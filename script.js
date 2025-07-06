@@ -21,46 +21,46 @@ const rarities = [
   { name: "Common",          chance: 1 / 2,       color: "#888888" }
 ];
 
-function startCutscene(text) {
-  iscutscene = true
-  const cutscene = document.getElementById("cutscene");
-  const cutsceneText = document.getElementById("cutscene-text");
-  cutsceneText.textContent = text;
-  cutscene.classList.remove("hidden");
-
-  setTimeout(() => {
-    cutscene.classList.add("hidden");
-    iscutscene = false
-  }, 3000);
-}
-
 function roll() {
-  if (iscutscene) return;
-  const resultEl = document.getElementById("result");
-  resultEl.className = "";
-
-  const totalChance = rarities.reduce((sum, r) => sum + r.chance, 0);
-  let rand = Math.random() * totalChance;
-
-  for (let r of rarities) {
-    rand -= r.chance;
-    const oneIn = Math.round(1 / r.chance).toLocaleString();
-
-    if (rand <= 0) {
-      let spanClass = "";
-      if (r.name === "glow") spanClass = "glow";
-      else if (r.name === "glow - extreme") spanClass = "glowX";
-
-      if (r.name === "lucky") {
-        startCutscene("you just got lucky...");
-      } else if (spanClass && r.name !== "glow") {
-        resultEl.innerHTML = `You got a <span class="${spanClass}" style="font-weight:bold;">${r.name.toUpperCase()}</span> with a chance of 1 in ${oneIn}`;
-        startCutscene("...");
-      } else {
-        resultEl.innerHTML = `You got a <span style="color:${r.color}; font-weight:bold;">${r.name.toUpperCase()}</span> with a chance of 1 in ${oneIn}`;
+    if (iscutscene) return;
+  
+    const resultEl = document.getElementById("result");
+    const tghd = document.getElementById("tghd");
+    resultEl.className = "";
+  
+    for (let r of rarities) {
+      if (Math.random() < r.chance) {
+        const oneIn = Math.round(1 / r.chance).toLocaleString()
+        if (r.name === "glow") {
+          tghd.classList.add("glow-effect");
+          tghd.classList.remove("glowX-effect");
+        } else if (r.name === "glow - extreme") {
+          tghd.classList.add("glowX-effect");
+          tghd.classList.remove("glow-effect");
+        } else {
+          tghd.classList.remove("glow-effect", "glowX-effect");
+        }
+  
+        let spanClass = "";
+        if (r.name === "glow") spanClass = "glow";
+        else if (r.name === "glow - extreme") spanClass = "glowX";
+        else if (r.name === "electric") spanClass = "electric";
+        if (r.name === "lucky") {
+          startCutscene("You just got lucky...");
+        } else if (r.name === "glow - extreme") {
+          startCutscene("...");
+        }
+        if (spanClass) {
+          resultEl.innerHTML = `You got a <span class="${spanClass}" style="font-weight:bold;">${r.name.toUpperCase()}</span> with a chance of 1 in ${oneIn}`;
+        } else {
+          resultEl.innerHTML = `You got a <span style="color:${r.color}; font-weight:bold;">${r.name.toUpperCase()}</span> with a chance of 1 in ${oneIn}`;
+        }
+  
+        return;
       }
-
-      return;
     }
+    tghd.classList.remove("glow-effect", "glowX-effect");
+    resultEl.innerHTML = `You got a <span style="color:#888888; font-weight:bold;">COMMON</span> with a chance of 1 in 2`;
   }
-}
+  
+  
