@@ -1,46 +1,57 @@
 body {
-    background-color: #bababa;
+  background-color: #bababa;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding: 2em;
 }
 
 #tghd {
-    display: inline-block;
+  display: inline-block;
+  margin-top: 1em;
+  width: 50px;
+  height: 50px;
+  transition: filter 0.3s ease;
 }
 
+/* Cutscene overlay styles */
 .cutscene {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%;
-    height: 100vh;
-    background: black;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Georgia', serif;
-    font-size: 2em;
-    text-shadow: 0px 0px 5px #ff5ec7;
-    text-align: center;
-    z-index: 9999;
-  }
-  
-  .cutscene.hidden {
-    display: none;
-  }
-  
-  @keyframes blink {
-    0%, 100% { border-color: transparent; }
-    50% { border-color: white; }
-  }
-  
-  #cutscene-text::after {
-    content: "";
-    display: inline-block;
-    width: 10px;
-    height: 1em;
-    border-right: 2px solid white;
-    animation: blink 1s step-end infinite;
-  }
-  .glow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Georgia', serif;
+  font-size: 2em;
+  text-shadow: 0px 0px 5px #ff5ec7;
+  text-align: center;
+  z-index: 9999;
+}
+
+.cutscene.hidden {
+  display: none;
+}
+
+/* Blinking cursor effect for cutscene text */
+@keyframes blink {
+  0%, 100% { border-color: transparent; }
+  50% { border-color: white; }
+}
+
+#cutscene-text::after {
+  content: "";
+  display: inline-block;
+  width: 10px;
+  height: 1em;
+  border-right: 2px solid white;
+  animation: blink 1s step-end infinite;
+}
+
+/* Text glow effects */
+.glow {
   color: #ffeeaa;
   text-shadow:
     0 0 5px #ffeeaa,
@@ -58,21 +69,25 @@ body {
     text-shadow: 0 0 15px #ffeeaa, 0 0 30px #ffcc66;
   }
 }
+
 .glowX {
-    transition: color 0.25s; 
+  transition: color 0.25s;
 }
+
 .glowX:hover {
-    color: #ff5ec7;
+  color: #ff5ec7;
 }
+
 .electric {
   color: #ffff00;
-    animation: elFlick 1s infinite;
+  animation: elFlick 1s infinite;
   text-shadow:
     0 0 5px #ffff33,
     0 0 10px #ffff66,
     0 0 20px #fffb00,
     0 0 40px #fff600;
 }
+
 @keyframes elFlick {
   0%   { opacity: 1; text-shadow: 0 0 10px #fff600; }
   10%  { opacity: 0.8; text-shadow: 0 0 5px #ffff33; }
@@ -85,4 +100,22 @@ body {
   80%  { opacity: 1; text-shadow: 0 0 18px #fff600; }
   90%  { opacity: 0.7; text-shadow: 0 0 5px #ffff33; }
   100% { opacity: 1; text-shadow: 0 0 22px #ffff00; }
+}
+
+@keyframes pulseGlowImage {
+  0%, 100% {
+    filter: drop-shadow(0 0 8px #ffeeaa);
+  }
+  50% {
+    filter: drop-shadow(0 0 20px #ffcc66);
+  }
+}
+
+@keyframes pulseGlowXImage {
+  0%, 100% {
+    filter: drop-shadow(0 0 12px #ff5ec7);
+  }
+  50% {
+    filter: drop-shadow(0 0 25px #ff85d1);
+  }
 }
