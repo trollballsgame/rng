@@ -39,4 +39,21 @@ body {
     border-right: 2px solid white;
     animation: blink 1s step-end infinite;
   }
-  
+  .glow {
+  color: #ffeeaa;
+  text-shadow:
+    0 0 5px #ffeeaa,
+    0 0 10px #ffdd88,
+    0 0 20px #ffcc66,
+    0 0 40px #ffcc66;
+  animation: pulseGlow 1.5s infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px #ffeeaa, 0 0 10px #ffcc66;
+  }
+  50% {
+    text-shadow: 0 0 15px #ffeeaa, 0 0 30px #ffcc66;
+  }
+}
