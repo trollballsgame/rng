@@ -48,7 +48,7 @@ function roll() {
 
     if (rand <= 0) {
       let spanClass = "";
-      if (r.name === "mythic") spanClass = "glow";
+      if (r.name === "glow") spanClass = "glow";
       else if (r.name === "glow - extreme") spanClass = "glowX";
 
       if (r.name === "lucky") {
