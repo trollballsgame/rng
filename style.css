@@ -57,3 +57,10 @@ body {
     text-shadow: 0 0 15px #ffeeaa, 0 0 30px #ffcc66;
   }
 }
+.glowX {
+    transition: color 0.25s; 
+    text-shadow: 0px 0px 5px #ff5ec7;
+}
+.glowX:hover {
+    color: #ff5ec7;
+}
