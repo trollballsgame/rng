@@ -40,6 +40,11 @@ function roll() {
                 startCutscene("...")
                 return;
             }
+            if (r.name === "electric") {
+                resultEl.innerHTML = `You got a <span class="electric" style="font-weight:bold;">${r.name.toUpperCase()}</span> with a chance of 1 in ${oneIn}`
+                startCutscene("...")
+                return;
+            }
             const msg = `You got a <span style="color:${r.color}; font-weight:bold;">${r.name.toUpperCase()}</span> with a chance of 1 in ${oneIn}`;
             resultEl.innerHTML = msg;
             return;
