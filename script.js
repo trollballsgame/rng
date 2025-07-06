@@ -18,7 +18,6 @@ function roll() {
       if (r.name === "lucky") {
         startCutscene("you just got lucky...");
       } else if (spanClass && r.name !== "glow") {
-        // Only trigger cutscene for glowX or other future variants, not regular "glow"
         resultEl.innerHTML = `You got a <span class="${spanClass}" style="font-weight:bold;">${r.name.toUpperCase()}</span> with a chance of 1 in ${oneIn}`;
         startCutscene("...");
       } else {
