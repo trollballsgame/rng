@@ -17,6 +17,7 @@ const rarities = [
   { name: "Uncommon",        chance: 1 / 10,      color: "#22aa22" },
   { name: "morning",         chance: 1 / 7,       color: "#ffd75e" },
   { name: "electric",        chance: 1 / 5,       color: "#ffff00" },
+  { name: "usual",           chance: 1 / 4,       color: "#96eb7a" },
   { name: "Common",          chance: 1 / 2,       color: "#888888" }
 ];
 
@@ -47,11 +48,11 @@ function roll() {
 
     if (rand <= 0) {
       let spanClass = "";
-      if (r.name === "glow") spanClass = "glow";
+      if (r.name === "mythic") spanClass = "glow";
       else if (r.name === "glow - extreme") spanClass = "glowX";
 
-      if (r.name === "classical") {
-        startCutscene("ok now this is rare");
+      if (r.name === "lucky") {
+        startCutscene("you just got lucky...");
       } else if (spanClass) {
         resultEl.innerHTML = `You got a <span class="${spanClass}" style="font-weight:bold;">${r.name.toUpperCase()}</span> with a chance of 1 in ${oneIn}`;
         startCutscene("...");
