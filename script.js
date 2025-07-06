@@ -1,9 +1,9 @@
 const rarities = [
-    
     { name: "KHDGWBNVIK====",   chance: 1 / 1450000, color: "#ffffff" },
     { name: "transcendant", chance: 1 / 1000000, color: "#0ff0ff" },
     { name: "classical",    chance: 1 / 499999, color: "#ffffff" },
     { name: "error",        chance: 1 / 404201, color: "#ff0033" },
+    { name: "glow - extreme",     chance: 1 / 99999,     color: "#ffd4f0" },
     { name: "mythic",       chance: 1 / 75000,  color: "#ff00cc" },
     { name: "Ethereal",     chance: 1 / 60300,  color: "#a100ff" },
     { name: "Legendary",    chance: 1 / 5000,   color: "#ff9900" },
@@ -19,7 +19,7 @@ const rarities = [
   
 function roll() {
     const resultEl = document.getElementById("result")
-    const totalChance = rarities.reduce((sum, r) => sum + r.chance, 0);
+    const totalChance = rarities.reduce((sum, r) => sum + r.chance, 0)
     let rand = Math.random() * totalChance;
   
     for (let r of rarities) {
@@ -32,6 +32,11 @@ function roll() {
             }
             if (r.name === "glow") {
                 resultEl.innerHTML = `You got a <span class="glow" style="font-weight:bold;">${r.name.toUpperCase()}</span> with a chance of 1 in ${oneIn}`
+                startCutscene("...")
+                return;
+            }
+            if (r.name === "glow - extreme") {
+                resultEl.innerHTML = `You got a <span class="glowX" style="font-weight:bold;">${r.name.toUpperCase()}</span> with a chance of 1 in ${oneIn}`
                 startCutscene("...")
                 return;
             }
