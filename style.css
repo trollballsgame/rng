@@ -18,6 +18,7 @@ body {
     align-items: center;
     font-family: 'Georgia', serif;
     font-size: 2em;
+    text-shadow: 0px 0px 5px #ff5ec7;
     text-align: center;
     z-index: 9999;
   }
@@ -59,8 +60,29 @@ body {
 }
 .glowX {
     transition: color 0.25s; 
-    text-shadow: 0px 0px 5px #ff5ec7;
 }
 .glowX:hover {
     color: #ff5ec7;
+}
+.electric {
+  color: #ffff00;
+    animation: elFlick 1s infinite;
+  text-shadow:
+    0 0 5px #ffff33,
+    0 0 10px #ffff66,
+    0 0 20px #fffb00,
+    0 0 40px #fff600;
+}
+@keyframes elFlick {
+  0%   { opacity: 1; text-shadow: 0 0 10px #fff600; }
+  10%  { opacity: 0.8; text-shadow: 0 0 5px #ffff33; }
+  20%  { opacity: 1; text-shadow: 0 0 15px #ffff66; }
+  30%  { opacity: 0.9; text-shadow: 0 0 8px #fffb00; }
+  40%  { opacity: 1; text-shadow: 0 0 20px #fff600; }
+  50%  { opacity: 0.6; text-shadow: 0 0 5px #ffff00; }
+  60%  { opacity: 1; text-shadow: 0 0 25px #ffff33; }
+  70%  { opacity: 0.9; text-shadow: 0 0 10px #fffb00; }
+  80%  { opacity: 1; text-shadow: 0 0 18px #fff600; }
+  90%  { opacity: 0.7; text-shadow: 0 0 5px #ffff33; }
+  100% { opacity: 1; text-shadow: 0 0 22px #ffff00; }
 }
