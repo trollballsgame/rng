@@ -1,6 +1,7 @@
 let iscutscene = false
 
 const rarities = [
+  { name: "Code: broken",    chance: 1 / 2000000, color: "#00ff04" },
   { name: "[redacted]",      chance: 1 / 1500000, color: "#00ff00" },  
   { name: "KHDGWBNVIK====",  chance: 1 / 1450000, color: "#ffffff" },
   { name: "transcendant",    chance: 1 / 1000000, color: "#0ff0ff" },
@@ -10,6 +11,7 @@ const rarities = [
   { name: "mythic",          chance: 1 / 75000,   color: "#ff00cc" },
   { name: "Ethereal",        chance: 1 / 60300,   color: "#a100ff" },
   { name: "Legendary",       chance: 1 / 5000,    color: "#ff9900" },
+  { name: "code",            chance: 1 / 1024,    color: "fffffff" },
   { name: "lucky",           chance: 1 / 777,     color: "#00ffff" },
   { name: "Rare",            chance: 1 / 100,     color: "#007bff" },
   { name: "fake",            chance: 1 / 50,      color: "#0077cf" },
